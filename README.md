@@ -1,1 +1,216 @@
-NAMASTE REACT
+
+
+# episode 2:
+---------------------------------------------------------------------------------------------------------------------------
+
+# npm : 
+package manger which manages your packges required for your project
+
+# package.json : 
+configuration of npm => use : to manage packge that we install for our project
+
+-------
+# imp package : => bundler 
+
+# bundler :=>  
+bundler bundle your application (build) or package you app properly so that it can be shifted to production 
+---------
+
+# parcel :=>
+
+dev server
+hot module reloading : to reload without refersh on file changes
+file watching alogorith
+tress shaking alogorithm
+minified 
+parcel ->for faster buidl
+
+# caret (^) & tilde (~) : 
+------------------------
+caret => caret is used for patch and minor updated like 3.1.2 to 3.1.3
+tilde => tilde is used for major updated like 3.1.3 to 4.0.1
+
+# package:json :=> 
+It’s a file that lists all the packages my project needs, along with their version ranges. It helps manage and track dependencies for my app. 
+-------------
+# package.lock.json : 
+It locks the exact versions of the packages that were installed so everyone working on the project gets the same versions, avoiding bugs caused by version differences.
+------------------
+
+(when patch updates comes for packeges it will updated automatcly using caret or tilde, so the version we installed intilay will be tracked on packge-locke.json)
+
+# Question
+--------------------------------------------
+If package.json allows newer versions but package-lock.json locks an older version, which version do others get on npm install, and how to update?
+A: Others get the exact version locked in package-lock.json (older one) to ensure consistency; to update to the newer version, run npm update or delete package-lock.json and node_modules then reinstall.
+
+# node_modules:
+-----------------
+It’s the folder where all the packages (dependencies) that my project needs are actually installed. When I run npm install, npm downloads the packages listed in package.json and puts them inside the node_modules folder so my app can use them.
+but there are other packges also installed inside in this folder, which are dependencies of the package we using which is called transitive dependency
+
+
+# EPISODE-3:
+---------------------------------------------------------------------------------------------------------------------------
+
+* reactelement is a object , on render of this element on dom it will convert to html element
+
+=> React.createElement() => object => html element (render);
+
+const parent = React.createElement("h1',{},'text');
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(parent);
+
+----------------------------------------------
+
+* the above one is actualy react core how we create react element but it is very hard way to do it, then we have =>JSX 
+
+-------
+# jsx is not a html in js , jsx is html like or xml like  syntax in js 
+
+
+const jsxheading = <h1 id='one'>welcome to namste react</h1>
+
+if we have multiple lines use round bracktes 
+
+const jsxheading = (
+    <div>
+      
+      <h1 id='one'>welcome to namste react</h1>
+    </div>
+)
+
+# this is how we create react element using jsx, it is very easy to do it, and it is very easy to read. 
+
+* but js engine wont understand this ,only js engine unsdetand ecmascript 5
+
+# so before it goes to js engine , it will transpiled ->(parcel) -> (babel)
+
+# BABEL :
+---------
+Babel is a JavaScript compiler that converts modern JavaScript code into older syntax that can undertand by browser
+
+
+# to create react element we need to use React.createElement which is *object* and we need to pass that to ReactDOM.render(object) , this will convert this to html element and render it on dom.  but this is very hard way to do it, so we have JSX which is html like syntax in js, but js engine wont understand this, so babel is used behind scene to transpile this and make broswer understand
+
+* React.createElement()/object => ReactDOM.render(object) => html element  ----->core process
+
+* const h1= <h1></h1> => traspiled to reactElemnt using babel => React.createElement()/object => ReactDOM.render(object)=> html element   -------------------->jsx processs
+
+
+-----------
+
+# React-Component :
+
+in react everything is componenet , there are two types of component in react 1) functional component 2) class component
+
+1) functional component :
+----------------------------
+
+normal js function that return peiece of jsx code or normal js function that return react element    
+
+const Heading = () => {
+    return <h1>this is heading</h1>
+}
+
+const headinf = () => {
+    return (
+        <div>
+          <h1>this is heading<h1>
+        </div>
+    )
+}
+
+* if there is single expression we can remove return and {}  
+
+const Heading = () => <h1>this is heading </h1>
+
+const heading = () => (
+    <div>
+        <h1>this is heading</h1>
+    </div>)
+
+note :
+
+* to call component we use angular bracket (< />) 
+* first letter shoudl caps for component 
+
+these are the specifaction , so that babel understnad on transpling
+
+------------------------
+
+
+# difference b/w react elemnt using jsx and fun compoennt
+-------------------
+
+# react elemennt using jsx :
+
+const heading = (
+    <div>
+        <h1>This is headind</h1>
+    </div>
+)
+
+# react fun component that retunr jsx code
+
+* use caps for first letter of component name
+* use arrow fun
+
+const Heading = () => (
+    <div>
+        <h1>This is headind</h1>
+    </div>
+)
+(or)
+const Heading = () => {
+    return (
+          <div>
+        <h1>This is headind</h1>
+    </div>
+    )
+}
+
+--------------------------
+# component compistion : using one component in another component.
+
+-------------
+
+* we can directly use js code inside jsx using {} flower brackets
+
+const a = 100;
+
+ const Heading = () => {
+    return (
+    <div>
+        {a}
+        <h1>This is headind</h1>
+    </div>
+    )
+}
+----------
+# cross site scripting:
+
+* when you write any thing in {} inside jsx , jsx will  not blindly run it it will santize the data then pass it ,which is cross-site scritping
+---------------------------
+
+ # we can component in below 3 ways
+---------------------------------
+
+const Header = () => {
+  return (
+    <div className="header">
+        heainf
+    </div>
+  )
+}
+
+const Main = () => {
+  return (
+    <Header/>
+    <Header></Header>
+    {Header()}
+  )
+}
+
+
+

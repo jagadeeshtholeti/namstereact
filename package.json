@@ -1,0 +1,30 @@
+{
+  "name": "namstereact",
+  "version": "1.0.0",
+  "description": "namste react practice",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jagadeeshtholeti/namstereact.git"
+  },
+  "author": "jagadeesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jagadeeshtholeti/namstereact/issues"
+  },
+  "homepage": "https://github.com/jagadeeshtholeti/namstereact#readme",
+  "devDependencies": {
+    "parcel": "^2.15.1"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "broswerList": [
+    "last 2 versions"
+  ]
+}
