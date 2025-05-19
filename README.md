@@ -75,7 +75,6 @@ if we have multiple lines use round bracktes
 
 const jsxheading = (
     <div>
-      
       <h1 id='one'>welcome to namste react</h1>
     </div>
 )
@@ -213,4 +212,92 @@ const Main = () => {
 }
 
 
+---------------------------------------------------------------------------------------------------------------------------
+# EPISODE-4
+
+
+# Inline Style :
+----------------
+To write inline styles in React, the style attribute expects a JavaScript object, and since you're writing this inside JSX (which is a syntax extension for JavaScript), you need to use {} (curly braces) to embed.
+
+* example
+---------
+<div 
+  className="custom-class"
+  style={{ width: '100px', height: '50px' }} // Inline style
+>
+
+# Destructuring
+-------
+Destructuring in JavaScript allows you to unpack values from arrays or properties from objects
+
+example:
+--------
+object-destructuring 
+-----------
+const a = {name:'jagadeesh',age:24,address:'wg'};
+const {name,address,age} = a;
+
+the varibles we need to match with object property key
+
+array-destructurng
+------------------
+const a = ['jagadessh',23,22];
+
+const [name,age,number] = a
+
+Array destructuring lets you assign array values to variables based on their position.
+
+----------
+
+
+
+const
+
+# PROPS :
+------------
+* To pass data from parent component to child component ,Props make components dynamic and reusable.
+
+
+* In JSX, when you write an element like <ChildComponent name="John" age={30} />, React translates it into a function call like this:
+  React.createElement(ChildComponent, { name: "John", age: 30 })
+
+
+* how we will pass arguments to function we need to call like that
+
+exmaple
+---------
+const RestoCard = (props) => {
+  const {name,rating,etf} = props;
+  return (
+    <div className="Card">
+      <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Chinese.png" alt="chinese" />
+      <h4 className="name">{name}</h4>
+      <h4 className="rating">{rating}</h4>
+      <h4 className="etf">{etf}</h4>
+    </div>
+  )
+}
+
+const CardContainer = () => {
+  return (
+    <div className="card-container">
+      <RestoCard name='Noddles' rating='4 stars' etf='40 etf' />
+      <RestoCard name='fried rice' rating='2 stars' etf='50 etf'/>
+      <RestoCard name='rice' rating='2 stars' etf='50 etf'/>
+    </div>
+  )
+}
+-------------------------------------------------------------------------------------------------------
+# CONFIG DRIVEN UI:
+
+all the ui will be driven based on config (data) , based on data the ui will be change
+----------------------------------------
+
+# key properties
+-------------
+
+when ever you are looping any list or array we need give key property ,which is nothing but unique id
+
+# If we don't provide a unique key when rendering a list, React won't know which item was added or removed. As a result, it will re-render every item in the list. However, if we provide a key (e.g., a unique ID), React will only re-render the affected items (e.g., the new item or the removed item), improving efficiency.
 
