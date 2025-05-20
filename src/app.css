@@ -1,0 +1,250 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;  /* Apply Poppins font globally */
+  }
+  
+  /***********************************************Header styling ****************************/
+  header {
+    display: flex;
+    justify-content: space-between;  /* Align items to left and right */
+    align-items: center;             /* Center items vertically */
+    padding: 10px 20px;              /* Add padding to header */
+    background-color: #333;          /* Dark grey background for the header */
+    color: white;                    /* White text color */
+  }
+  
+  .cmp-logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cmp-logo {
+    max-height: 100px;  /* Set the logo size */
+    width: auto;   /* Maintain aspect ratio */
+  }
+  
+  .cmp-nav-container {
+    flex-grow: 1;  /* Make the navigation take up available space */
+    text-align: center;  /* Center align the navigation items */
+  }
+  
+  .cmp-nav-items {
+    list-style: none;  /* Remove bullet points */
+    display: inline-flex;
+    gap: 50px;  /* Space between navigation items */
+  }
+  
+  .cmp-nav-item {
+    font-size: 20px;  /* Text size */
+    cursor: pointer;
+    transition: color 0.3s ease;  /* Smooth hover effect */
+    color: #ccc;  /* Light grey color for navigation items */
+  }
+  
+  .cmp-nav-item:hover {
+    color: #fff;  /* Change color to white on hover */
+  }
+  
+  button {
+    background-color: #444;  /* Dark grey background for button */
+    color: white;             /* White text color */
+    border: none;             /* Remove border */
+    padding: 10px 20px;       /* Padding for button */
+    font-size: 20px;          /* Text size */
+    cursor: pointer;         /* Cursor pointer */
+    border-radius: 5px;       /* Rounded corners */
+    transition: background-color 0.3s ease;  /* Smooth hover effect */
+  }
+  
+  button:hover {
+    background-color: #333;  /* Darken button color on hover */
+  }
+  
+  button:focus {
+    outline: none;           /* Remove the outline when button is focused */
+  }
+  
+/***************************************************************Footer*********************/
+/* Footer Styling */
+.footer {
+    background-color: #333; /* Dark background color */
+    color: white;           /* White text color */
+    padding: 20px 0;        /* Padding for spacing */
+    text-align: center;     /* Center align text */
+  }
+  
+  .footer__content {
+    max-width: 1200px;      /* Max width for content */
+    margin: 0 auto;         /* Center the content */
+    padding: 0 20px;        /* Horizontal padding */
+  }
+  
+  .footer__copyright {
+    margin-bottom: 10px;    /* Space between copyright and links */
+  }
+  
+  .footer__links {
+    display: inline-block;  /* Display the links in a row */
+  }
+  
+  .footer__link {
+    color: white;           /* White color for links */
+    margin: 0 15px;         /* Space between links */
+    text-decoration: none;  /* Remove underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .footer__link:hover {
+    color: #fcb900;         /* Change color on hover */
+  }
+
+  /*******************************Restuanret*************************************************/
+  .resto-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+  }
+  
+  /* Card container setup */
+.restaurant-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 5px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  max-width: 300px;
+  width: auto;  /* Ensures the card resizes with the container */
+  overflow: hidden;
+}
+
+/* Hover effect on the card */
+.restaurant-card:hover {
+  transform: scale(1.05);
+}
+
+/* Image container */
+.cardImageContainer {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Restaurant Name */
+.restaurant-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #333;
+}
+
+/* Text Styling for other details */
+.cuisine, .rating, .delivery-time, .price-for-two, .popular-dish, .location, .discount {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Rating Styling */
+.rating {
+  color: #f39c12; /* Yellow color */
+}
+
+/* Price Styling */
+.price-for-two {
+  font-weight: bold;
+  color: #27ae60; /* Green color */
+}
+
+/* Delivery time */
+.delivery-time {
+  font-style: italic;
+  color: #2980b9; /* Blue color */
+}
+
+/* Availability Status */
+.availability {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.availability.open {
+  color: #2ecc71; /* Green for open */
+}
+
+.availability.closed {
+  color: #e74c3c; /* Red for closed */
+}
+
+/* Discount Styling */
+.discount {
+  font-weight: bold;
+  color: #3498db; /* Blue for discount text */
+}
+
+/* Badges Styling */
+.badges {
+  margin-top: 10px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #ecf0f1;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 15px;
+  color: #2c3e50;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .restaurant-card {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .restaurant-name {
+    font-size: 1.25rem;
+  }
+
+  .cuisine, .rating, .delivery-time, .price-for-two, .popular-dish, .location, .discount {
+    font-size: 0.9rem;
+  }
+
+  .cardImageContainer {
+    height: 180px;  /* Adjust the image container height */
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-card {
+    padding: 10px;
+    margin: 8px;
+  }
+
+  .restaurant-name {
+    font-size: 1.1rem;
+  }
+
+  .cuisine, .rating, .delivery-time, .price-for-two, .popular-dish, .location, .discount {
+    font-size: 0.85rem;
+  }
+
+  .cardImageContainer {
+    height: 150px;  /* Adjust the image container height for small screens */
+  }
+}
+/*****************************************************/

@@ -301,3 +301,94 @@ when ever you are looping any list or array we need give key property ,which is 
 
 # If we don't provide a unique key when rendering a list, React won't know which item was added or removed. As a result, it will re-render every item in the list. However, if we provide a key (e.g., a unique ID), React will only re-render the affected items (e.g., the new item or the removed item), improving efficiency.
 
+
+
+
+
+
+/*****************************************************************************************************************************/
+
+# EPISODE-5
+-----------
+
+
+* never ever do any hard coded things like img strings etc in component file for that you can create seprate folder utils
+
+* use caps like LOGO_URL for const names;
+
+--
+# export & import
+-------------------
+Use export for named exports of multiple components or functions, and import them with curly braces: import { Component } from './Component';. Use export default for exporting a single item, and import it without curly braces: import Component from './Component';. export is for multiple exports, while export default is for a single default export.
+
+there are two types of exports:
+1)default export => if there is only one componet or var or function you can use this => this can be work only after component,function,var is defined  =>and on import we dont need to use {} curly braces
+
+2)named export => if there are multiple component or varible or fn to export we use this => this can write before varible ,component,fn 
+
+export const a = 1; 
+export const b = 2;
+const c =3
+
+export default c;  
+
+import {a,b},c from ./file
+
+
+You can reassign imported let values in plain JavaScript, but it's not recommended in React because React doesn't track these changes.
+
+--------------------
+
+# Normal Variable vs React State Variable
+
+  Normal Varible:
+  --------------
+
+    Definition: A normal JavaScript variable holds data, but changes to this data won’t automatically trigger a re-render in the DOM.
+
+    Example: If you change the cards array (e.g., by filtering it), you have to manually re-render the UI to reflect the changes, such as by calling render() or manually manipulating the DOM.
+
+
+  State Variable :
+  --------------
+    Definition: A React state variable is used to store data in a component, and when the state changes, React automatically re-renders the component with the updated data
+
+    to create this we use useState
+
+  # Hooks 
+  -----------
+  * hooks are normal js utility function
+
+  # UseState
+  ------------
+    * useState is hook which is used to create state varaible 
+    * useState in React returns an array. The array contains two elements:
+          The current state value (the actual value stored in the state).
+          A setter function (used to update the state).
+
+
+ # why react is fast =>react is good at dom manipulation (effiecnet dom manipulation) =>virtual dom
+
+ # react using reconcilation algorithm which is known as react-fiber
+
+# Virtual-DOM:
+-------------
+Virtual dom is representation of actual dom in memory
+
+react is fast becuse it will do effiencern dom manipulation , this is done beacuse of virtualdom
+
+react creates virtual dom which is repersentaion of actual dom in memory , if state variable updated then its creates another virtual dom with updated nodes , then using diff alogorithm it compares the nodes and what are the nodes are differe it will updated that differe nodes in main dom  this proccess called reconcilation.
+
+----------------
+
+
+
+
+
+
+
+
+ 
+
+
+
