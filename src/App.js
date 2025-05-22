@@ -1,25 +1,24 @@
-  import React from "react";
-  import ReactDOM from "react-dom/client";
-  import Header from "./components/Header";
-  import Footer from "./components/Footer";
-  import RestoContainer from "./components/RestoContainer";
-  import { restaurantsMock } from "./utils/mockData";
-  import { useState } from "react";
+import React, { use } from "react";
+import ReactDOM from "react-dom/client";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import RestoContainer from "./components/RestoContainer";
+import { restaurantsMock } from "./utils/mockData";
+import { useState, useEffect } from "react";
 
-  import "./app.css";
+import "./app.css";
+import Main from "./components/Main";
 
+const App = () => {
 
-  const App = () => {
+  return (
+    <>
+      <Header />
+      <Main/>
+      <Footer />
+    </>
+  );
+};
 
-    return (
-      <>
-          <Header/>
-          <RestoContainer />
-          <Footer/>
-      </>
-    )
-  }
-
-
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(<App/>);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);

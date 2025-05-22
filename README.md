@@ -362,9 +362,17 @@ You can reassign imported let values in plain JavaScript, but it's not recommend
   # UseState
   ------------
     * useState is hook which is used to create state varaible 
+    * No, passing an argument to useState is not mandatory, but it’s common and recommended.
+    * The argument you pass to useState(initialValue) sets the initial state value.
     * useState in React returns an array. The array contains two elements:
-          The current state value (the actual value stored in the state).
-          A setter function (used to update the state).
+          state varible 
+          A setter function (used to update the state variable).
+
+    const [state,setState] = useState(initialValue);
+
+    imp
+    --
+    When you use const [val, setVal] = useState(), val is a constant for that render, but when you update state with setVal, React re-renders the component and creates a new val with the updated value. So, each render gets a fresh val, making it safe to use const inside function components.
 
 
  # why react is fast =>react is good at dom manipulation (effiecnet dom manipulation) =>virtual dom
@@ -382,8 +390,84 @@ react creates virtual dom which is repersentaion of actual dom in memory , if st
 ----------------
 
 
+# EPISODE-6
+-------------
+
+# Monolith Architecture:
+---------------------------
+
+in monolith arctirecture everthing we need to right in single application , like ui, bakcend(apis), db config, sms, email etc   .so even to build ui also we need build (or) compile entire whole application, and we cant use different tech stack (react for ui, node for backend ) lik ethat
+
+# Microservices Architecture:
+
+in Microservice arctitecture everything will be divided small services(ui,backend,conifg,db etc) which is known as sepration of concerns  , and each services are independent of each other , each service will be responsible for one thing , like ui, backend, db config. and each service will be developed in different tech stack (react for ui, node for backend)
+
+and they are hosted on different on ports and deployed (or) mapped to same domain with different resource like
+
+domain.com / -ui
+domain.com /api - backend
+domain.com /config - config
+domain.com/sms -sma
+
+all these services are interact  with other by call to different service
+
+-----------------------
+
+# PROMISE - then - async (indeatil in book)
+-----------------------
+A Promise is an object representing the eventual result of an async operation. Using .then(), you handle the Promise once it resolves, but since fetch() returns a Promise, you must convert the response to JSON with .json() (which itself returns a Promise) to get usable data. You can't assign the JSON data directly to a variable outside .then() because async operations happen later. To write cleaner, easier-to-read code, async/await lets you write asynchronous code that looks synchronous by waiting for Promises to resolve before proceeding.
 
 
+/**********************/
+
+* there are two ways to fetch api 
+
+1) app -> fetch api -> render  => drawback is fetching api takes times user will face bad expeirnce 
+
+2) app -> render -> fetch api ->render -> we wil render smthng and after fetch we will re render  (this can possible by useEffect hook)
+
+
+# USEEFFECT:
+-------------
+ * useffect hook is used to perform sideffects (Side effects are operations that interact with the outside world)
+
+      *Fetching data from an API
+
+      *Subscribing to events (like window resize or scroll)
+
+      *Setting timers (setTimeout, setInterval)
+
+      *Manually manipulating the DOM
+
+      *Logging, localStorage access, etc.
+
+
+
+ * useEffect takes 2 argument one is callback function one is depency array
+
+    useEffect (()=>{},[]);
+
+ * how it will work 
+  -----------------
+   * the call back function will only  execute after intial render of component ;, if we given empty dependency array
+   * the call back function will exceute on intail render and if there state varible that update which we given in dependency array
+   * the call back function will execute every time on compoent re render ; if we omit the depency array
+
+   ----
+   If you have 3 state variables, say a, b, and c, and your useEffect dependency array includes only [a, b], here’s what happens:
+
+T  the useEffect callback will run:
+
+      After the component mounts (initial render).
+
+      Whenever a or b changes.
+
+      If the component re-renders because c changed, but c is NOT in the dependency array, the useEffect callback will NOT run again.
+-----------
+
+# SHIMMER UI
+-----------
+if you want to show something on page loads , so we mading the fake impressis,
 
 
 

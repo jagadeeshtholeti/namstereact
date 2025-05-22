@@ -1,7 +1,10 @@
+import RestoContainer from "./RestoContainer";
 const Main = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return (
+    <div className="main">
+      <RestoContainer />
+    </div>
+  );
+};
+
+export default Main;
