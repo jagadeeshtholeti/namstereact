@@ -467,12 +467,130 @@ T  the useEffect callback will run:
 
 # SHIMMER UI
 -----------
-if you want to show something on page loads , so we mading the fake impressis,
+if you want to show something on page loads , so we mading the fake impressison.................
+
+
+
+# EPISODE 6.1 
+---------------
+
+* optional chaining:
+------------------
+
+Optional chaining (?.) in JavaScript is a syntax that lets you safely access deeply nested, If any part is null or undefined, it stops and returns undefined instead of throwing an error.
+
+
+# for form
+------------
+When you have many input fields, it's easier to keep their values in one state object, like { name: '', email: '' }. Each input should have a name that matches a key in this object. When the user types, you get the name and value from the event and update the state by copying the old data and changing only the matching key. We use square brackets [name] to tell JavaScript to use the value of the name variable as the key. This way, managing many inputs becomes simple and organized.
+
+* When you write an object like { name: value }, JavaScript treats name literally as the key.
+
+* But when you use square brackets like { [name]: value }, it means use the value of the variable name  as the key (this is called a computed property name).
+
+
+
+--------------------------------------------------------------------------
+# EPISODE-7
+-------
+
+ # react is single page application everything will be in singlepage but to get that feeling of multiple page effect , we use routing 
+
+  # routing is nothing but diplay content (components) based on differnet urls,
+
+    * for this routing we use react-router-dom js library 
+
+    * first we need to conif the routes means on which url what should come and this config need to done on root   level component which is app
+
+    * for this config we need to use createBrowserRouter which is function we need to use from react-router 
+
+    * this function take list of ojbects each object should have {path:'',element:''}
+
+    * const routes = createBrowserRouter([{path:'',element:'',errorelElement:''},{}])
+
+    * now we need provider this configuration to our app 
+
+    * for this we have RouterProvider Component which we need to import form react-router
+
+    * this RouterProvider have predefault prop which is router , in that we need to pass our configuration
+
+    * <RouterProvider router={config varaible}/>
+
+    * earlier we render root elemnt no we need to use this Router Provider compoentn
+
+    ----------------------------------
+    * this react-router-dom provides useRouteError() hooks which whill give the more infor abbout error
+
+  # example:
+  -----------
+  if supose our app component having header ,main ,footer => 
+     if we write normal routes like:
+
+        const routeConfig = createBrowserRouter([
+          {
+            path:'/'
+            element:<App/>
+          },
+          {
+            path:'/login'
+            element:<Login/>
+          },
+          {
+            path:'/signup'
+            element:<Sigup/>
+          }
+        ])
+
+      react.render(<RouterProvider router={routeConfig}>)
+
+    here we are dipalying app component on / and login component /login 
+
+    but in app component only i want my header and footer common and in between i want to chnage the component based on route here comes child route into picture 
 
 
 
 
- 
+
+    const routeConfig = createBrowserRouter([
+        {
+          path:'/',
+          element:<App/>,
+          errorElement:<ErrorPage/>,
+          children:[
+            {
+              path:'/',
+              element:<RestoContainer/>
+            },
+            {
+              path:'/about',
+              element:<About/>,
+              children:[
+                {
+                  path:'signup',
+                  element:<SignUpForm/>
+                }
+                {
+                  path:'carousel',
+                  element:<Carousel/>
+                }
+              ]
+            }
+          ],
+        }
+      ])
 
 
 
+# child Routes 
+---------------
+Child routes are defined inside a parent route using the children array.
+
+<Outlet /> is used in the parent component to render the active child route’s component.
+
+This allows for nested layouts where the layout remains the same (e.g., header, sidebar) while only the content inside the <Outlet /> changes.
+
+Outlet is component form react-router ,which act as  a placeholder in the parent component where the child routes will be rendered based on the current URL.
+
+---------------------
+
+# to redirect to 

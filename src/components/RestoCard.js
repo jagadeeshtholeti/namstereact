@@ -14,6 +14,8 @@ const RestoCard = (props) => {
         />
       </div>
 
+      <h1>{info.id}</h1>
+
       {/* Restaurant Name */}
       <h2 className="restaurant-name">{info.name}</h2>
 

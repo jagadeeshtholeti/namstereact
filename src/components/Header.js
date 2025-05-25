@@ -1,5 +1,6 @@
 import React from "react";
 import { LOGO_URL } from "../utils/contents";
+import { Link, NavLink } from "react-router";
 export {LOGO_URL} from "../utils/contents";
 
 const Header = () => {
@@ -10,9 +11,8 @@ const Header = () => {
             </div>
             <nav className="cmp-nav-conatiner">
                 <ul className="cmp-nav-items">
-                    <li className="cmp-nav-item">home</li>
-                    <li className="cmp-nav-item">About</li>
-                    <li className="cmp-nav-item">Contact</li>
+                    <li className="cmp-nav-item"><NavLink to='/about'>About</NavLink></li>
+                    <li className="cmp-nav-item"><Link to='/contact'>Contact</Link></li>
                 </ul>
             </nav>
             <button>Cart</button>
