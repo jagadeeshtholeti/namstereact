@@ -55,8 +55,7 @@ const routeConfig = createBrowserRouter([
       {
         path:'/restmenu/:id',
         element:<MenuCardContainer/>
-      }
-
+      },
     ],
   }
 ])

@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <header>
             <div className="cmp-logo-container">
-                <img src={LOGO_URL} className="cmp-logo" alt="logo"/>
+                <Link to='/'><img src={LOGO_URL} className="cmp-logo" alt="logo"/></Link>
             </div>
             <nav className="cmp-nav-conatiner">
                 <ul className="cmp-nav-items">

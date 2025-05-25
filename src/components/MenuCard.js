@@ -17,7 +17,7 @@ const MenuCard = (props) => {
         <h3 className="menu-card-title">{info.name}</h3>
         <p className="menu-card-category">{info.category}</p>
         <p className="menu-card-description">{info.description}</p>
-        <p className="menu-card-price">₹{info.price}</p>
+        <p className="menu-card-price">₹{info.price/100}</p>
         <p className="menu-card-stock">
           {info.inStock ? "In Stock" : "Out of Stock"}
         </p>

@@ -6,6 +6,12 @@
     font-family: 'Poppins', sans-serif;  /* Apply Poppins font globally */
   }
   
+  
+a {
+  text-decoration: none;
+  color: bisque;
+}
+
   /***********************************************Header styling ****************************/
   header {
     display: flex;
@@ -284,43 +290,6 @@
 }
 
 /**********************search**********************************/
-/* .search-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;
-  max-width: 400px;
-  gap: 10px;
-}
-
-.searchbar {
-  flex: 1;
-  padding: 10px 15px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 6px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.searchbar:focus {
-  border-color: #007bff;
-}
-
-.search-container button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.search-container button:hover {
-  background-color: #0056b3;
-} */
 
 
 /* Overall container for search and filter */
@@ -600,4 +569,15 @@ input::placeholder {
 .menu-card-stock {
   font-size: 14px;
   color: green;
+}
+
+/************************************ERRO PAGE************************************************************/
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  gap: 20px;
 }

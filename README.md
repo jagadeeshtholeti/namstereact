@@ -545,11 +545,18 @@ When you have many input fields, it's easier to keep their values in one state o
 
     here we are dipalying app component on / and login component /login 
 
-    but in app component only i want my header and footer common and in between i want to chnage the component based on route here comes child route into picture 
+    but in app component only i want my header and footer common and in between i want to chnage the component based on route here comes child route  and outlet into picture 
 
 
+    if we make our app like this 
+  
+
+    <Header/>
+    <Outlet/>
+    <Footer/>
 
 
+   and config like this 
 
     const routeConfig = createBrowserRouter([
         {
@@ -579,6 +586,7 @@ When you have many input fields, it's easier to keep their values in one state o
         }
       ])
 
+     now in this app component headeer and fooorer are there , no based on childer routes define in config <Outlet> component will render the actaula component based on route
 
 
 # child Routes 
@@ -593,4 +601,71 @@ Outlet is component form react-router ,which act as  a placeholder in the parent
 
 ---------------------
 
-# to redirect to 
+# to redirect to specipic path on on click be use link and navlink in react
+------------
+<Link />:
+Purpose: <Link /> is used for basic navigation between different routes in a React application.
+
+Usage: It renders an anchor (<a>) element and allows the user to navigate to a different route without causing a full page reload.
+
+<NavLink />:
+Purpose: <NavLink /> is similar to <Link /> but adds additional functionality to apply styles or classes to the active link.
+
+Usage: It automatically adds an "active" class to the link when its route is active, allowing you to style the active link differently.
+
+---------------
+# why we need to use this link instead of anchor
+-------------------------------------------
+
+if we use a tag it will make network call to server and reloads the page and server content which is =>server side routing
+
+
+here with this link and navlink page will not refersh whihc is client side routing beacuse everycompoennt will be loaded on app load only but we are making ki render based on routes 
+
+----------------------------------------
+
+# Dynamic Route
+---------------
+restuarnts/:id 
+
+: colun make that route dynamic if user hits restuatnts/121 then id will take 121
+-----
+
+# we can get that id using useParam() hook produced by react-router-dom
+
+
+# react-router-dom/react-router
+--------------------------------
+# hooks:
+
+* useRouteError : return object that allows you to access information about errors in the routing process.
+* useParams : useParams() is a hook provided by React Router to access the dynamic parameters of the current route.
+
+/:id is known as a route parameter or dynamic parameter in React Router,,it means the route is dynamic and can accept any value at that position in the URL.
+
+to get that value we use useParams 
+
+useparam how it will work:
+--------------------
+when you define /:id dynamic paramenter in rout, react-router will collect that paramater and store it as  key and origin value as value 
+
+when you use useParams hook it returns a object with that object of key value
+
+---------------------------
+
+# Components:
+
+* Link : used for navigating between different routes in a React application without causing a full page reload.
+* NavLink :  is similar to <Link />, but it automatically applies an "active" class to the link when its route is active, making it useful for navigation menus.
+* RouterProvider : <RouterProvider /> is used to provide routing functionality to your React application by accepting a router prop, which defines the route configurations using createBrowserRouter.
+* Outlet: <Outlet /> is a component ,t acts as a placeholder where the content(component) of the active child route is rendered inside the parent route's layout (component).
+
+# function
+-----------
+* createBrosweRouter :
+   it is used for config of routes ,by taking list of object as argumrnts [{path:'',children:[],errorELement:'',element}]
+
+
+
+
+
